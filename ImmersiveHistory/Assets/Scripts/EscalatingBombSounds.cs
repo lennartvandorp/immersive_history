@@ -21,8 +21,14 @@ public class EscalatingBombSounds : MonoBehaviour
         StartCoroutine(InitBombSounds());
     }
 
+
+    /// <summary>
+    /// Hardcoded the amount of bombs to play and when to play them
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator InitBombSounds()
     {
+        //This could be written better with recursion
         source.PlayOneShot(clip4);
         GameManager.Instance.onExplosion.Invoke(.02f);
         yield return new WaitForSeconds(planeClip.length / 5f);

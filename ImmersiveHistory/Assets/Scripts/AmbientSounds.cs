@@ -43,6 +43,9 @@ public class AmbientSounds : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Initiates the coroutine for the sounds
+    /// </summary>
     public void StartSounds()
     {
         StartCoroutine(FadeBetweenSounds(0, startTime));

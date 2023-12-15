@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(DoTimers());
     }
+
+    /// <summary>
+    /// Hardcoded the timers and related events
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator DoTimers()
     {
         onStartGame.Invoke();

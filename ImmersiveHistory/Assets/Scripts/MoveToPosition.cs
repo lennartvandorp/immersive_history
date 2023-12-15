@@ -17,6 +17,9 @@ public class MoveToPosition : MonoBehaviour
         startPos.parent = null;
     }
 
+    /// <summary>
+    /// Sets the begin conditions and starts the coroutine for the end
+    /// </summary>
     public void StartMoving()
     {
         duration = source.clip.length;
@@ -27,6 +30,10 @@ public class MoveToPosition : MonoBehaviour
         StartCoroutine(DoFinaleCallBack());
     }
 
+    /// <summary>
+    /// Waits for the duration of the airplane clip and ends the experience
+    /// </summary>
+    /// <returns></returns>
     IEnumerator DoFinaleCallBack()
     {
         yield return new WaitForSeconds(source.clip.length);
@@ -34,10 +41,12 @@ public class MoveToPosition : MonoBehaviour
         Debug.Log("DoCallBack");
     }
 
+
     public void Update()
     {
         if (isMoving)
         {
+            //moves the audiosource
             transform.position = Vector3.Lerp(startPos.position, endPos.position, (Time.timeSinceLevelLoad - startMovingTime) / duration);
         }
     }

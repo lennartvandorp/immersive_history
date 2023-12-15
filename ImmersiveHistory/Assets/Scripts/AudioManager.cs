@@ -28,6 +28,10 @@ public class AudioManager : MonoBehaviour
         StartCoroutine(FadeOutAllAudioSources());
     }
 
+    /// <summary>
+    /// Loops through the audio sources by fading them in and out. 
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator FadeOutAllAudioSources()
     {
         float timeEllapsed = 0f;

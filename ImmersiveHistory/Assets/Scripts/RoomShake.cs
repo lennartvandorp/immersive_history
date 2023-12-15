@@ -27,6 +27,11 @@ public class RoomShake : MonoBehaviour
     }
 
     float intensity;
+    /// <summary>
+    /// Sets the positions for the room to shake towards
+    /// </summary>
+    /// <param name="_intensity"></param>
+    /// <returns></returns>
     public IEnumerator ShakeRoom(float _intensity)
     {
         intensity = _intensity * intensityMult;
@@ -38,6 +43,7 @@ public class RoomShake : MonoBehaviour
         }
         shakeTargetPos = startPosition;
     }
+
 
     void SetTargetPos()
     {
@@ -55,6 +61,13 @@ public class RoomShake : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Moves the object towards the destination by the maxdistance, by no more than the max distance. 
+    /// </summary>
+    /// <param name="start"></param>
+    /// <param name="destination"></param>
+    /// <param name="maxDistance"></param>
+    /// <returns></returns>
     Vector3 MoveAndStop(Vector3 start, Vector3 destination, float maxDistance)
     {
         if ((start - destination).magnitude < maxDistance)
